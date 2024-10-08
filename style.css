@@ -31,14 +31,19 @@ body {
     font-family: var(--ff);
     font-size: 1rem;
     font-weight: 400;
-    display: grid;
-    place-content: center;
     min-height: 100vh;
     min-height: 100dvh;
     min-height: 100svh;
     position: relative;
-    padding: 2rem;
     overflow-x: hidden;
+}
+
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
 .round-box {
@@ -52,10 +57,15 @@ body {
     left: 0;
 }
 
+main {
+    display: grid;
+    place-content: center;
+    padding-top: 2rem;
+}
+
 .grid {
     display: grid;
     max-width: 720px;
-    aspect-ratio: 1/1;
     gap: 3rem;
 }
 
@@ -66,6 +76,7 @@ body {
     outline: 0.625rem solid var(--clr-white);
     box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.151);
     animation: 0.5s ease-out 0s 1 slideInFromTop;
+    justify-content: center;
 }
 
 .profile-pic img {
@@ -230,6 +241,7 @@ body {
 
 .booking {
     text-align: center;
+    padding-inline: 1rem;
 }
 
 .booking-header {
@@ -243,6 +255,10 @@ body {
     color: var(--clr-desaturated-dark-violet);
     font-size: 1.2rem;
     line-height: 1.5;
+}
+
+footer {
+    padding: 1rem;
 }
 
 @keyframes fadeIn {
@@ -269,7 +285,7 @@ body {
     }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 735px) {
     .grid {
         grid-template-columns: 1fr 1fr;
         place-items: center;
@@ -322,6 +338,6 @@ body {
         opacity: 0.04;
         z-index: -1;
         bottom: 0;
-        transform: translateX(120%);
+        right: -5%;
     }
 }
